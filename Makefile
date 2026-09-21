@@ -213,6 +213,7 @@ UPROGS=\
 	$U/__pipe1\
 	$U/__pipe2\
 	$U/__list\
+	$U/_sixfive\
 
 
 
