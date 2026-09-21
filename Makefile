@@ -194,6 +194,7 @@ UPROGS=\
 	$U/_mkdir\
 	$U/_rm\
 	$U/_sh\
+	$U/_sleep\
 	$U/_stressfs\
 	$U/_usertests\
 	$U/_grind\
@@ -203,6 +204,15 @@ UPROGS=\
 	$U/_forphan\
 	$U/_dorphan\
 	$U/_sync\
+	$U/__copy\
+	$U/__open\
+	$U/__fork\
+	$U/__exec\
+	$U/__forkexec\
+	$U/__redirect\
+	$U/__pipe1\
+	$U/__pipe2\
+	$U/__list\
 
 
 
