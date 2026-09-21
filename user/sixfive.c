@@ -44,10 +44,9 @@ main(int argc, char *argv[])
 {
   int fd, i;
 
-  if (argc <= 1) {
-    printf("Error: prilis malo argumentov.\n");
-    printf("Usage: %s <file> [<file> ...]\n", argv[0]);
-    exit(1);
+  if (argc == 1) {
+    sixfive(0);
+    exit(0);
   }
 
   for (i = 1; i < argc; i++) {
