@@ -9,6 +9,7 @@ K=kernel
 U=user
 
 OBJS = \
+  $U/_sandbox\
   $K/entry.o \
   $K/kalloc.o \
   $K/string.o \
