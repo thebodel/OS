@@ -1,3 +1,6 @@
+// Needs MAXPATH for sandbox path exceptions.
+#include "param.h"
+
 // Saved registers for kernel context switches.
 struct context {
   uint64 ra;
@@ -100,5 +103,7 @@ struct proc {
   struct context context;      // swtch() here to run process
   struct file *ofile[NOFILE];  // Open files
   struct inode *cwd;           // Current directory
+  int syscall_mask;            // Blocked system calls for sandbox
+  char allowed_path[MAXPATH];  // One path exception for open/exec
   char name[16];               // Process name (debugging)
 };

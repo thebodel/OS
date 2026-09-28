@@ -9,7 +9,6 @@ K=kernel
 U=user
 
 OBJS = \
-  $U/_sandbox\
   $K/entry.o \
   $K/kalloc.o \
   $K/string.o \
@@ -221,6 +220,8 @@ UPROGS=\
 
 ifeq ($(LAB),syscall)
 UPROGS += \
+	$U/_sandbox\
+	$U/_sbtest\
 	$U/_attack\
 	$U/_secret
 endif
