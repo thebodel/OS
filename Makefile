@@ -220,6 +220,8 @@ UPROGS=\
 
 ifeq ($(LAB),syscall)
 UPROGS += \
+	$U/_sandbox\
+	$U/_sbtest\
 	$U/_attack\
 	$U/_secret
 endif

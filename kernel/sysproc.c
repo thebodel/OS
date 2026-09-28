@@ -110,3 +110,25 @@ sys_uptime(void)
   release(&tickslock);
   return xticks;
 }
+
+uint64
+sys_interpose(void)
+{
+  int mask;
+  uint64 pathaddr;
+  struct proc *p = myproc();
+
+  argint(0, &mask);
+  argaddr(1, &pathaddr);
+
+  if (p->syscall_mask != 0 || p->allowed_path[0] != '\0')
+    return -1;
+
+  p->syscall_mask = mask;
+  p->allowed_path[0] = '\0';
+
+  if (pathaddr != 0 && argstr(1, p->allowed_path, sizeof(p->allowed_path)) < 0)
+    return -1;
+
+  return 0;
+}
